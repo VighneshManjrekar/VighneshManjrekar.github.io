@@ -281,8 +281,10 @@
         </footer>
     </div>
     <script>
+        document.querySelector('.main').style.display = "none";
         window.addEventListener("load", () => {
             document.getElementById("loading").style.display = "none";
+            document.querySelector('.main').style.display = "flex";
             AOS.init({
                 duration: 1000,
             });
