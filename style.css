@@ -82,7 +82,6 @@
 /**************************** Middle ***********************************/
 
 #middle {
-  background: #eeeeee;
   padding: 3em 2em;
   display: flex;
   flex-flow: column;
@@ -108,34 +107,206 @@
   width: 100%;
 }
 
+/**************************** Experience ***********************************/
+#work {
+  background: #eeeeee;
+  padding: 3em 2em;
+}
+#work ul {
+  list-style: none;
+  margin: 0 !important;
+}
+
+#work a {
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+#work img {
+  max-width: 100%;
+}
+
+#work button:focus {
+  outline: none;
+}
+
+#work h1,
+#work h2,
+#work h3,
+#work h4,
+#work h5,
+#work h6 {
+  color: black;
+  margin: 0;
+}
+#work p {
+  font-size: 14px;
+  line-height: 26px;
+  color: black;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.d-flex-2 {
+  display: flex;
+  align-items: center;
+}
+
+.all-timelines {
+  position: relative;
+}
+.all-timelines::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  width: 2px;
+  background: #efa22f;
+  top: 20px;
+}
+.single-timeline {
+  margin-bottom: 1.5rem;
+}
+.timeline-blank {
+  width: 50%;
+}
+.timeline-text {
+  width: 50%;
+  padding-left: 30px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+.timeline-text h6 {
+  font-weight: 900;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+.timeline-text span {
+  color: black;
+  display: block;
+  width: 100%;
+}
+.single-timeline:nth-child(even) .timeline-text span {
+  text-align: right;
+}
+.t-square {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: -6px;
+  background: #efa22f;
+}
+.single-timeline:nth-child(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.single-timeline:nth-child(even) .t-square {
+  right: -6px;
+  left: unset;
+}
+.single-timeline:nth-child(even) .timeline-text {
+  padding-left: 0;
+  padding-right: 30px;
+  text-align: right;
+}
+
+@media all and (max-width: 991px) {
+}
+@media all and (max-width: 600px) {
+  .all-timelines::before {
+    right: unset;
+    top: 0;
+  }
+
+  .timeline-area {
+    padding: 0 20px;
+  }
+  .single-timeline:nth-child(2n) .timeline-text {
+    padding-left: 30px;
+    padding-right: 0;
+    text-align: left;
+  }
+  .single-timeline:nth-child(2n) .t-square {
+    left: -6px;
+    right: unset;
+  }
+  .timeline-blank {
+    display: none;
+  }
+  .timeline-text {
+    width: 100%;
+  }
+  .single-timeline:nth-child(even) .timeline-text span {
+    text-align: left !important;
+  }
+}
+@media all and (max-width: 575px) {
+}
+@media all and (max-width: 360px) {
+  .all-timelines::before {
+    top: 32px;
+  }
+}
+
 /**************************** Skill ***********************************/
 
 #skill {
   padding: 3em 0;
   margin: auto;
+  width: 100%;
 }
-/* #skill-div {
+.skill-div {
+  max-width: 1100px;
+  margin: auto;
+}
+
+#filter-buttons {
   display: flex;
-  flex-flow: column;
+  flex-wrap: wrap;
   justify-content: center;
-} */
-#skill-div{
+  max-width: 500px;
+  margin: 1rem auto 2rem auto;
+  gap: 1rem;
+}
+.filter-btn {
+  padding: 5px 20px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: "Jost", sans-serif;
+  background: transparent;
+  color: black;
+  border: solid 2px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.filter-btn.active {
+  background-color: black;
+  color: white;
+}
+#skill-div {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
-}
-.skill-div-data {
   display: flex;
-  align-items: center;
-  /* justify-content: center; */
-  width: auto;
-  margin-bottom: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
 }
-.skill-img {
+#skill-div img {
   width: 50px;
-  margin-right: 15px;
+  height: 50px;
 }
 .skill-img img {
   width: 100%;
@@ -149,16 +320,18 @@
 /**************************** Project ***********************************/
 
 #project {
+  background: #eeeeee;
   display: flex;
   justify-content: space-around;
   flex-flow: column;
   padding: 3.3em 0;
-  background: #eeeeee;
 }
 #project-catlogue {
-  max-width: 1500px;
-  display: flex;
-  flex-flow: column;
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr; /* By default, display 1 project-card per row */
+  gap: 20px;
 }
 .project-card {
   display: flex;
@@ -233,7 +406,6 @@
   flex-flow: column;
   justify-content: space-between;
   max-width: 1500px;
-
 }
 .qualification-div {
   background: #eeeeee;
@@ -259,13 +431,30 @@
   color: #ce1212;
 }
 
+/**************************** Qualification ***********************************/
+
+#achievements {
+  padding: 2.5em 0;
+  background: #eeeeee;
+}
+
+#achievements-catlogue {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+#achievements-catlogue li {
+  margin-bottom: 1rem;
+}
+
 /******************************* Footer *************************************/
 
 #footer {
   height: 150px;
   background: #303841;
   display: flex;
-  padding: 2.5em 0;
+  padding: 2.5rem 0 4rem 0;
   flex-flow: column;
 }
 #social {
@@ -291,6 +480,7 @@
   justify-content: center;
 }
 
+
 #copyright-img {
   width: 25px;
 }
@@ -311,10 +501,12 @@
     font-size: 2.5em;
   }
   #skill-div {
-    flex-flow: row;
-    justify-content: space-evenly;
+    /* flex-flow: row; */
+    /* justify-content: space-evenly; */
     flex-wrap: wrap;
-    padding: 0 10%;
+    gap: 2rem;
+    /* padding:0 1rem; */
+    /* padding: 0 10%; */
   }
   .skill-div-data {
     margin-bottom: 2em;
@@ -323,24 +515,22 @@
   #education {
     padding: 3.3em 15%;
   }
-  #skill-div{
+  /* #skill-div{
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem 2rem ;
-
-  }
+  } */
 }
 @media screen and (min-width: 700px) {
   #project,
   #education {
     padding: 3.3em 1em;
   }
-  #skill-div{
+  /* #skill-div{
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
-  }
+  } */
   #project-catlogue {
-    width: 70%;
-    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
   }
   .project-card {
     margin: 1.2rem auto;
@@ -388,11 +578,7 @@
   }
 
   #project-catlogue {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
   }
   .project-card {
     flex: 0.3;
@@ -403,9 +589,6 @@
   .qualification-div {
     margin: 0 3%;
     font-size: 1.1em;
-  }
-  #skill-div{
-    grid-gap: 2rem;
   }
 }
 @media screen and (min-width: 1000px) {
