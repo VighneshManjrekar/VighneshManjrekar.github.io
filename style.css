@@ -111,6 +111,8 @@
 #work {
   background: #eeeeee;
   padding: 3em 2em;
+  font-family: "Jost", sans-serif;
+
 }
 #work ul {
   list-style: none;
@@ -436,6 +438,7 @@
 #achievements {
   padding: 2.5em 0;
   background: #eeeeee;
+  font-family: "Jost", sans-serif;
 }
 
 #achievements-catlogue {
